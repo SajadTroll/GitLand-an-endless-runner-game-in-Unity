@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130791d3e20646d2b6d81688877b0909, type: 3}
+  m_Name: OutlineSettingsExample
+  m_EditorClassIdentifier: 
+  edgeColor: {r: 1, g: 1, b: 1, a: 1}
+  thickness: 1
+  useDepth: 1
+  useNormals: 1
+  useColor: 0
+  minDepthThreshold: 0
+  maxDepthThreshold: 100
+  minNormalsThreshold: 0
+  maxNormalsThreshold: 10
+  minColorThreshold: 0
+  maxColorThreshold: 0.25
+  outlineOnly: 0
