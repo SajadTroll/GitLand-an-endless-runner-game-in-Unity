@@ -1,11 +1,36 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance;
+    public float speed = 4f;
+    public GameObject[] tiles;
 
-    private void Awake()
+    float Index = 10;
+
+    private void Start()
     {
-        Instance = this;
+        Destroy(transform.GetChild(0).gameObject, 5f);
+        Destroy(transform.GetChild(1).gameObject, 5f);
+    }
+
+    private void Update()
+    {
+        gameObject.transform.Translate(Vector3.back * Time.deltaTime * speed);
+
+        if (transform.position.z <= Index)
+        {
+            CreateRandomTile(Vector3.forward * 20);
+
+            Index -= 10f;
+        }
+    }
+
+    private void CreateRandomTile(Vector3 position)
+    {
+        int randomNumber = Random.Range(0, tiles.Length);
+
+        GameObject insTile = Instantiate(tiles[randomNumber], transform);
+        insTile.transform.position = position;
+        Destroy(insTile, 10f);
     }
 }
