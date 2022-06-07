@@ -4,11 +4,17 @@ using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
     [SerializeField] float swipeDuration = 0.5f;
 
     bool isMoving;
 
     SwipeListener swipeListener;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void OnEnable()
     {

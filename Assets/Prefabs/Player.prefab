@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7357859237527132593}
   - component: {fileID: 7357859237527132594}
   - component: {fileID: 4516914455011028010}
+  - component: {fileID: 722269714}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7357859238027349400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7513, y: 1.7513, z: 1.7513}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7032059121166949776}
@@ -77,8 +78,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7aaee4f47a31d4dbe6b30d3d29b1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swipeListener: {fileID: 0}
-  swipeDuration: 0.2
+  swipeDuration: 0.5
+--- !u!114 &722269714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357859238027349400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c52040e0d356884a866f616474f7057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSwipeCancelled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSwipe:
+    m_PersistentCalls:
+      m_Calls: []
+  _sensetivity: 10
+  _continuousDetection: 0
+  _swipeDetectionMode: 0
 --- !u!1001 &7357859237156813435
 PrefabInstance:
   m_ObjectHideFlags: 0
