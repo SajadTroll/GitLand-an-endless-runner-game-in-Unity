@@ -7,8 +7,10 @@ public class CoinManager : MonoBehaviour
 
     public TextMeshProUGUI coinText;
 
+    public AudioClip coinSound;
+
     int _coi;
-    int coin
+    public int coin
     {
         get { return _coi; }
         set
@@ -26,5 +28,6 @@ public class CoinManager : MonoBehaviour
     public void CoinPlusOne()
     {
         coin++;
+        AudioManager.Instance.PlayClip(coinSound);
     }
 }

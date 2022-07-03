@@ -1,6 +1,9 @@
 using UnityEngine;
 using GG.Infrastructure.Utils.Swipe;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+using PlayFab.ClientModels;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,10 +13,18 @@ public class PlayerController : MonoBehaviour
     bool isMoving;
 
     SwipeListener swipeListener;
+    public GameObject losePanel;
+    Animator animator;
 
     private void Awake()
     {
         Instance = this;
+        animator = transform.GetChild(0).GetComponent<Animator>();
+    }
+
+    private void onLeaderboardGet(GetLeaderboardResult obj)
+    {
+        throw new NotImplementedException();
     }
 
     private void OnEnable()
@@ -52,7 +63,11 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            print("Lose!");
+            transform.GetChild(1).gameObject.SetActive(true);
+            LevelManager.Instance.speed = 0;
+            LeaderboardManager.Instance.SendLeaderboard(CoinManager.Instance.coin);
+            animator.SetBool("isRunning", false);
+            losePanel.SetActive(true);
         }
     }
 
