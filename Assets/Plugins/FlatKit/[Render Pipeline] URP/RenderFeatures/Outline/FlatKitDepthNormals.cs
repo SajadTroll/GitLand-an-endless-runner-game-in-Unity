@@ -44,7 +44,7 @@ public class FlatKitDepthNormals : ScriptableRendererFeature {
                 ref CameraData cameraData = ref renderingData.cameraData;
                 Camera camera = cameraData.camera;
 #pragma warning disable 618
-                if (cameraData.isStereoEnabled)
+                if (cameraData.xr.enabled)
 #pragma warning restore 618
                 {
                     context.StartMultiEye(camera);
